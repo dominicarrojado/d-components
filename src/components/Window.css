@@ -1,0 +1,72 @@
+.window {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #111111;
+  background-color: #222222;
+}
+
+.window.animating {
+  transition: all 0.2s ease-in-out;
+}
+
+.window > .title-bar {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 32px;
+}
+
+.window > .title-bar > .draggable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.window > .title-bar > .icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 16px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.window > .title-bar > .btns {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  z-index: 3;
+}
+
+.window > .title-bar > .btns > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 100%;
+  color: #999999;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.window > .title-bar > .btns > button:hover {
+  color: #ffffff;
+}
+
+.window > .title-bar > .btns > button:active {
+  color: #cccccc;
+}
+
+.window > .body {
+  position: relative;
+  flex: 1;
+}
